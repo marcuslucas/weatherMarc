@@ -52,11 +52,18 @@ const WeatherApp = (props) => {
     const weather = await fetchLocation(city);
     setWeather(weather);
   };
+
+  const handleKey = (e) => {
+    if (e.code === "Enter") {
+      handleSubmit(input);
+    }
+  };
+
   return (
     <div className={classes.mainContainer}>
       <h1 className={classes.title}>WeatherMarc</h1>
       <div className={classes.inputCity}>
-        <input type="text" onChange={handleChange} />
+        <input onKeyDown={handleKey} type="text" onChange={handleChange} />
         <button
           onClick={() => {
             handleSubmit(input);
