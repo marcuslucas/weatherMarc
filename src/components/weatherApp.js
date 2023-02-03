@@ -17,7 +17,7 @@ const WeatherApp = (props) => {
   };
 
   const fetchLocation = async (city) => {
-    const locationUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+    const locationUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
     try {
       const weather = await fetch(locationUrl)
