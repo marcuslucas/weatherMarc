@@ -135,7 +135,16 @@
 }
 
 @media (max-width: 550px) {
+  .weatherCard {
+    width: 80%;
+  }
+
   .inputCity {
     width: 50%;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-direction: column;
   }
 }
