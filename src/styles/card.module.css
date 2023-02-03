@@ -8,11 +8,12 @@
   align-items: center;
   flex-direction: column;
   height: 100vh;
+  width: 100vw;
 }
 
 .inputCity {
   margin-bottom: 20px;
-  width: 23%;
+
   height: 30px;
   display: flex;
   justify-content: space-between;
@@ -20,6 +21,7 @@
 
 .inputCity input {
   width: 200px;
+  margin-right: 10px;
   border-radius: 10px;
   border: 1px solid var(--bgBlack);
   font-weight: 500;
@@ -39,12 +41,12 @@
 }
 
 .weatherCard {
-  padding: 0px 20px;
+  padding: 0px 20px 20px 20px;
   background-color: var(--txtWhite);
   border: 1px solid black;
   border-radius: 20px;
-  height: 24vh;
-  width: 27%;
+  width: 30%;
+
   display: flex;
   flex-flow: column;
   gap: 20px;
@@ -113,4 +115,16 @@
   text-align: right;
 
   font-size: 12px;
+}
+
+@media (max-width: 1030px) {
+  .weatherCard {
+    width: 50%;
+  }
+}
+
+@media (max-width: 550px) {
+  .inputCity {
+    width: 50%;
+  }
 }
