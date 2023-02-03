@@ -54,7 +54,7 @@ const WeatherApp = (props) => {
   };
   return (
     <div className={classes.mainContainer}>
-      <h1 className={classes.title}>Weather Application</h1>
+      <h1 className={classes.title}>WeatherMarc</h1>
       <div className={classes.inputCity}>
         <input type="text" onChange={handleChange} />
         <button
