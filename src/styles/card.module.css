@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600&display=swap");
+
+.mainContainer {
+  font-family: "Roboto Mono";
+  background-color: var(--bgWhite);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.inputCity {
+  margin-bottom: 20px;
+  width: 23%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputCity input {
+  width: 200px;
+  border-radius: 10px;
+  border: 1px solid var(--bgBlack);
+  font-weight: 500;
+}
+
+.inputCity input:focus {
+  outline: none;
+}
+
+.inputCity button {
+  width: 90px;
+  color: var(--txtWhite);
+  background-color: var(--bgBlack);
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.weatherCard {
+  padding: 0px 20px;
+  background-color: var(--txtWhite);
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 24vh;
+  width: 27%;
+  display: flex;
+  flex-flow: column;
+  gap: 20px;
+  color: var(--txtBlack);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.cardHeader {
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.weatherIcon {
+  width: 100px;
+}
+
+.weatherCity {
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.weatherDesc {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1;
+  margin: 0;
+}
+
+.weatherTemp {
+  font-weight: 600;
+  font-size: 50px;
+  width: auto;
+  letter-spacing: -5px;
+  margin: 10px 0;
+}
+
+.cardBody {
+  display: flex;
+  gap: 30px;
+}
+
+.cardBody h2 {
+  flex: 1;
+}
+
+.weatherDetails {
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  flex: 2;
+  flex-flow: column;
+}
+
+.parameters {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+}
+
+.paramVal {
+  text-align: right;
+
+  font-size: 12px;
+}
