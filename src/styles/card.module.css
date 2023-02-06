@@ -11,6 +11,15 @@
   width: 100vw;
 }
 
+.title {
+  margin: 0;
+  font-size: 42px;
+}
+
+.time {
+  margin: 5px 0px 10px 0px;
+}
+
 .inputCity {
   margin-bottom: 20px;
 
