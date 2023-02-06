@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import WeatherCard from "./WeatherCard";
 import classes from "../styles/card.module.css";
@@ -11,6 +11,23 @@ const apiKey = "1e653fef7422076284e27d55e5562e53";
 const WeatherApp = (props) => {
   const [weather, setWeather] = useState();
   const [input, setInput] = useState("");
+
+  useEffect(() => {
+    if ("geolocation" in navigator) {
+      console.log("Available");
+      navigator.geolocation.getCurrentPosition(async (position) => {
+        console.log("Latitude is :", position.coords.latitude);
+        console.log("Longitude is :", position.coords.longitude);
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        const coordinates = [lat, lon];
+        const weather = await fetchWeather(coordinates);
+        setWeather(weather);
+      });
+    } else {
+      console.log("not available");
+    }
+  }, []);
 
   const handleChange = (event) => {
     setInput(event.target.value);
