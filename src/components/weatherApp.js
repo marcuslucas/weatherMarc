@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import WeatherCard from "./WeatherCard";
 import classes from "../styles/card.module.css";
-import Clock from "react-live-clock";
 
 const apiKey = "1e653fef7422076284e27d55e5562e53";
 
@@ -12,6 +11,7 @@ const apiKey = "1e653fef7422076284e27d55e5562e53";
 const WeatherApp = (props) => {
   const [weather, setWeather] = useState();
   const [input, setInput] = useState("");
+  const [time, setTime] = useState();
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -51,6 +51,18 @@ const WeatherApp = (props) => {
   };
 
   const fetchWeather = async (cords) => {
+    const today = new Date();
+
+    const time =
+      today.getMonth() +
+      1 +
+      "/" +
+      today.getDate() +
+      " " +
+      today.getHours() +
+      ":" +
+      today.getMinutes();
+    setTime(time);
     const lat = cords[0];
     const lon = cords[1];
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=imperial`;
@@ -80,7 +92,8 @@ const WeatherApp = (props) => {
   return (
     <div className={classes.mainContainer}>
       <h1 className={classes.title}>WeatherMarc</h1>
-      <Clock className={classes.time} format={"HH:mm:ss"} ticking={true} />
+      {/* <Clock className={classes.time} format={"HH:mm:ss"} ticking={true} /> */}
+      <div className={classes.time}>{time}</div>
       <div className={classes.inputCity}>
         <input onKeyDown={handleKey} type="text" onChange={handleChange} />
         <button
