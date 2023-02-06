@@ -70,6 +70,7 @@ const WeatherApp = (props) => {
       const weather = await fetch(weatherUrl)
         .then((res) => res.json())
         .then((data) => {
+          console.log(data);
           return data;
         });
       return weather;
@@ -93,7 +94,7 @@ const WeatherApp = (props) => {
     <div className={classes.mainContainer}>
       <h1 className={classes.title}>WeatherMarc</h1>
       {/* <Clock className={classes.time} format={"HH:mm:ss"} ticking={true} /> */}
-      <div className={classes.time}>{time}</div>
+
       <div className={classes.inputCity}>
         <input onKeyDown={handleKey} type="text" onChange={handleChange} />
         <button
@@ -104,7 +105,7 @@ const WeatherApp = (props) => {
           Search
         </button>
       </div>
-      <WeatherCard weather={weather} />
+      <WeatherCard weather={weather} time={time} />
     </div>
   );
 };

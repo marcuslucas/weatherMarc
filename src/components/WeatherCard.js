@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "../styles/card.module.css";
 
-const WeatherCard = ({ weather }) => {
+const WeatherCard = ({ weather, time }) => {
   //   console.log(weather);
   return (
     <div className={classes.weatherCard}>
@@ -10,6 +10,7 @@ const WeatherCard = ({ weather }) => {
           <p className={classes.weatherCity}>
             {weather ? weather.name + " " + weather.sys.country : "-"}
           </p>
+          <div className={classes.time}>{time}</div>
           <p className={classes.weatherDesc}>
             {weather ? weather.weather[0].description : "-"}
           </p>
